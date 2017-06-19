@@ -1,0 +1,329 @@
+/*------------------------------------|
+|	Mixins                              |
+|------------------------------------*/
+/*---- Define Box Model ----*/
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+  -moz-box-sizing: $box-model; // Firefox <= 19
+  box-sizing: $box-model;
+}
+
+/*---- Define Font Faces ----*/
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: quote($font-name);
+		src: url($file-name + '.eot');
+		src: url($file-name + '.eot?#iefix')  format('embedded-opentype'),
+		url($file-name + '.woff') format('woff'),
+		url($file-name + '.ttf')  format('truetype'),
+		url($file-name + '.svg##{$font-name}')  format('svg');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+/*---- Calculate Font Size, line height, and letter spacing in Rems ----*/
+/*---- Usage: @include font-size(14px, 16px) ----*/
+@function rem($size) {
+  $remSize: $size / $base-font-size;
+  @return $remSize * 1rem;
+}
+@function em($size) {
+  $remSize: $size / $base-font-size;
+  @return $remSize * 1rem;
+}
+@mixin font-size($size, $height: $size, $spacing: 0) {
+  font-size: $size;
+  font-size: rem($size);
+  line-height: $height * 1px;
+  line-height: rem($height);
+  letter-spacing: $spacing / 1000  * $size * 1px;
+  letter-spacing: $spacing / 1000  * $size / $base-font-size * 1rem;
+}
+
+/*---- Media Queries ----*/
+@mixin mediaMin($minWidth) {
+	@media (min-width: $minWidth) {
+		@content;
+	}
+}
+
+@mixin mediaMax($minWidth) {
+	$maxWidth: ($minWidth - .01em);
+	@media (max-width: $maxWidth) {
+		@content;
+	}
+}
+
+@mixin mediaBound($minWidth, $maxWidth) {
+	$max: ($maxWidth - .01rem);
+	@media (min-width: $minWidth) and (max-width: $max) {
+		@content;
+	}
+}
+
+/*------------------------------------*
+	Positioning
+*------------------------------------*/
+
+  /*---- Absolute position element to cover whole parent ----*/
+  @mixin cover($top : 0, $right : 0, $bottom : 0, $left : 0) {
+  	position: absolute;
+  	top: $top;
+  	right: $right;
+  	bottom: $bottom;
+  	left: $left;
+  }
+
+  /*---- Center element vertically & horizontally in parent ----*/
+  @mixin center-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  /*---- Center element vertically in parent ----*/
+  @mixin center-vertical {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  /*---- Expand Div to fill remaining width ----*/
+  	/*---- Add to expanded div. Must be second div ----*/
+  	@mixin sticky-expand {
+  		overflow:hidden;
+  	}
+  	/*---- Left Stick: Add to stuck div. Must be first div ----*/
+  	@mixin sticky-left-fixed {
+  		float: left;
+  	}
+  	/*---- Right Stick: Add to stuck div. Must be first div ----*/
+  	@mixin sticky-right-fixed {
+  		float: right;
+  	}
+
+/*---- Animate ----*/
+/*
+	Usage:
+		@include keyframes(slide-down) {
+			0% { opacity: 1; }
+			90% { opacity: 0; }
+		}
+		@include animation('slide-down 5s 3');
+*/
+@mixin keyframes($animation-name) {
+   @-webkit-keyframes #{$animation-name}{
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+     @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+     @content;
+  }
+  @-o-keyframes #{$animation-name} {
+     @content;
+  }
+  @keyframes #{$animation-name} {
+     @content;
+  }
+}
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+		-moz-animation: #{$str};
+			-ms-animation: #{$str};
+				-o-animation: #{$str};
+					animation: #{$str};
+}
+/*---- Transition ----*/
+	/* Usage: @include transition(color .3s ease); */
+@mixin transition($args...) {
+	-webkit-transition: $args;
+		-moz-transition: $args;
+			-ms-transition: $args;
+				-o-transition: $args;
+					transition: $args;
+}
+
+/*---------------------------------------------
+| Include triange attached to div
+| @include triangle within a pseudo element and
+|  add positioning properties (ie. top, left)
+| $direction: up, down, left, right
+| $size: Width at base of triangle
+| $height: Decimal (0-1). Proportion of
+|  height to $size
+| $offset: Pixels, closer to (+) or further
+|  from (-) parent
+| $color: Triangle color
+|--------------------------------------------*/
+@mixin triangle($direction, $size: 6px, $height: .5, $offset: 1, $color: #222){
+  position: relative;
+  @if ($direction == 'up'){
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -$size + $offset;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      border-bottom: $size solid $color;
+      border-left: $height*$size solid transparent;
+      border-right: $height*$size solid transparent;
+      }
+    }
+  @else if ($direction == 'down'){
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 0;
+      width: 0;
+      bottom: -$size + $offset;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      border-top: $size solid $color;
+      border-left: $height*$size solid transparent;
+      border-right: $height*$size solid transparent;
+    }
+  }
+  @else if ($direction == 'left'){
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 0;
+      width: 0;
+      left: -$size + $offset;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      border-top: $height*$size solid transparent;
+      border-bottom: $height*$size solid transparent;
+      border-right: $size solid $color;
+    }
+  }
+  @else if ($direction == 'right'){
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 0;
+      width: 0;
+      right: -$size + $offset;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      border-top: $height*$size solid transparent;
+      border-bottom: $height*$size solid transparent;
+      border-left: $size solid $color;
+    }
+  }
+}
+
+/*---- Flexbox ----*/
+	/*---- Parent ----*/
+		@mixin flexbox() {
+			display: -webkit-box;
+				display: -moz-box;
+					display: -ms-flexbox;
+						display: -webkit-flex;
+							display: flex;
+		}
+		@mixin flex-wrap($values) {
+			-webkit-flex-wrap: $values;
+				-ms-flex-wrap: $values;
+					flex-wrap: $values;
+		   }
+
+		@mixin flex-justify($values) {
+			-webkit-justify-content: $values;
+				-ms-justify-content: $values;
+					justify-content: $values;
+		}
+	/*---- Children ----*/
+		@mixin flex($values) {
+			-webkit-box-flex: $values;
+			-moz-box-flex:  $values;
+			-webkit-flex:  $values;
+			-ms-flex:  $values;
+			flex:  $values;
+		}
+
+		@mixin flex-align($values) {
+			-webkit-align-items: $values;
+				-ms-align-items: $values;
+					align-items: $values;
+		}
+
+/*---- Youtube Video: Expands video to full width & proportional height ----*/
+  @mixin youtube-parent($aspect-ratio: 16-9) {
+    @if ($aspect-ratio == '16-9') {
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 0;
+      height: 0;
+      position: relative;
+      overflow: hidden;
+    } @else if ($aspect-ratio == '4-3') {
+      padding-bottom: 75%; /* 4:3 */
+      padding-top: 0;
+      height: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+  }
+  @mixin youtube-child() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 101%;
+  }
+
+
+/*---- Opacity ----*/
+/* Usage:   @include opacity(0.8); */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+      filter: alpha(opacity=$opacity-ie);
+}
+
+/*---- Remove border & outline on buttons ----*/
+@mixin input-reset {
+  border: none;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+/* Convert hex to rgba */
+@function RGBA($color, $alpha: .3) {
+	$r: red($color);
+	$g: green($color);
+	$b: blue($color);
+	@return rgba($r, $g, $b, $alpha);
+}
+
+/*---- Clearfix ----*/
+/* Usage: @extend %clearfix; */
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

@@ -1,0 +1,73 @@
+.nf-form-cont {
+  background-color: #a5c715;
+  padding: 35px 35px 25px;
+  max-width: 600px;
+  margin: auto;
+  .nf-form-title,
+  .nf-form-fields-required,
+  .ninja-forms-req-symbol,
+  .nf-error-msg {
+    display: none;
+  }
+  label {
+    color: #fff;
+    font-weight: 200 !important;
+    font-size: 16px;
+  }
+  input, textarea {
+    background-color: #fff;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    color: #646463;
+  }
+  .nf-field-container {
+    margin-bottom: 20px;
+  }
+  .nf-field-label {
+    margin-bottom: 15px !important;
+  }
+  .firstname-container,
+  .number-container {
+    @media screen and (min-width: 600px) {
+      display: inline-block;
+      width: 48%;
+    }
+  }
+  .firstname-container {
+    margin-right: 5px;
+    @media screen and (min-width: 600px) {
+      margin-right: 15px;
+    }
+    @media screen and (min-width: 850px) {
+      margin-right: 5px;
+    }
+    @media screen and (min-width: 950px) {
+      margin-right: 10px;
+    }
+    @media screen and (min-width: 1400px) {
+      margin-right: 15px;
+    }
+  }
+  .submit-container {
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    //float: right;
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    margin-bottom: 0;
+  }
+  .submit {
+    background-color: transparent;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .submit::after {
+    background-image: url('../img/black_link.png');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 35px;
+  }
+
+}

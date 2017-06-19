@@ -1,0 +1,183 @@
+/*------------------------------------*
+	Objects
+\*------------------------------------*/
+
+.o-wrap--full-width {
+  position: relative;
+  width: 100%;
+  /*---- Media Query ----*/
+  @media screen and (min-width: $max_width) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.o-wrap--padding-100 {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  @media screen and (min-width: 600px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media screen and (min-width: 1000px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  @media screen and (min-width: 1300px) {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+  @media screen and (min-width: 1600px) {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
+.o-wrap-pull-up {
+  position: relative;
+  margin-top: -250px;
+}
+
+.o-main-content {
+  width: 74%;
+  display: inline-block;
+  padding: 45px 40px;
+}
+
+.o-main-content--lg {
+  padding: 45px 40px;
+  @media screen and (min-width: 600px) {
+    width: 66.5%;
+    display: inline-block;
+  }
+  @media screen and (min-width: 800px) {
+    width: 79%;
+  }
+}
+
+.o-main-content--lg-no-pad {
+  padding: 0 15px;
+  @media screen and (min-width: 600px) {
+    width: 66.5%;
+    display: inline-block;
+  }
+  @media screen and (min-width: 800px) {
+    width: 79%;
+  }
+}
+
+.o-main-content--no-sidebar {
+  padding: 45px 40px;
+}
+
+.o-content {
+  padding: 40px 0;
+}
+
+.o-sidebar {
+  width: 24%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.o-sidebar--sml {
+  vertical-align: top;
+  max-width: 300px;
+  margin: auto;
+  @media screen and (min-width: 600px) {
+    width: 31%;
+    display: inline-block;
+  }
+  @media screen and (min-width: 800px) {
+    width: 20%;
+  }
+}
+
+
+.o-content-block {
+  font-size: medium;
+  font-size: initial;
+  display: block;
+  vertical-align: top;
+  text-align: left;
+  overflow: hidden;
+  padding: 20px 10px 10px;
+  @media screen and (min-width: 850px) {
+    padding: 10px 20px 15px;
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 25px 20px 15px;
+  }
+}
+
+
+.o-bg-img {
+  display: block;
+  width: 100%;
+  height: 0;
+  background-position: center center;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  image-rendering: auto;
+}
+.o-bg-icon {
+  display: block;
+  width: 100%;
+  height: 0;
+  background-position: center center;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  image-rendering: auto;
+}
+
+.o-banner-bgd-img {
+  height: 400px;
+  position: relative;
+}
+
+.o-featured-bg-img {
+  height: 325px;
+}
+
+.o-background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.o-bgd-absolute {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.o-text-overlay {
+  position: absolute;
+  z-index: 998;
+}
+
+.o-hover-layer {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.o-content-block-lg-pad {
+  padding: 35px 25px 15px;
+}
+.o-content-block-wrap {
+  padding: 40px 0 60px;
+}

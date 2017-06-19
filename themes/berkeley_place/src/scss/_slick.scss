@@ -1,0 +1,41 @@
+.slick-dots {
+  bottom: 15px !important;
+  right: 20%;
+  li {
+    color: #fff !important;
+  }
+  @media screen and (min-width: 450px) {
+    right: 10%;
+  }
+  @media screen and (min-width: 550px) {
+    right: 5%;
+  }
+  @media screen and (min-width: 600px) {
+    right: 0;
+  }
+  @media screen and (min-width: 700px) {
+    right: -9%;
+  }
+  @media screen and (min-width: 800px) {
+    right: -15%;
+  }
+  @media screen and (min-width: 950px) {
+    right: -20%;
+  }
+  @media screen and (min-width: 1000px) {
+    right: -5%;
+  }
+  @media screen and (min-width: 1150px) {
+    right: -10%;
+  }
+  @media screen and (min-width: 1250px) {
+    right: -15%;
+  }
+  @media screen and (min-width: 1650px) {
+    right: -20%;
+  }
+}
+.slick-dots li button:before {
+  color: #fff !important;
+  font-size: 10px !important;
+}

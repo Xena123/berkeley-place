@@ -1,0 +1,62 @@
+/*------------------------------------|
+|	Footer                              |
+|------------------------------------*/
+
+footer {
+  background-color: $colour-footer;
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  p {
+    color: $colour-text-footer;
+  }
+}
+
+
+
+.c-footer {
+  p:first-of-type {
+    padding-bottom: 30px;
+  }
+  .c-footer-contact {
+    padding-bottom: 10px;
+  }
+  .c-footer-contact.last {
+    padding-bottom: 30px;
+  }
+  span, a {
+    font-size: 20px;
+    @media screen and (min-width: 800px) {
+      font-size: 26px;
+    }
+  }
+}
+
+.c-footer-half {
+  margin-top: 20px;
+  @media screen and (min-width: 850px) {
+    margin-top: 0;
+  }
+  .img-wrap {
+    @media screen and (min-width: 850px) {
+      width: 50%;
+    }
+  }
+  // img {
+  //   height: 200px;
+  //   width: 220px;
+  //   @media screen and (min-width: 1200px) {
+  //     height: 250px;
+  //     width: 250px;
+  //   }
+  // }
+}
+
+.c-contact-img {
+  height: 230px;
+}

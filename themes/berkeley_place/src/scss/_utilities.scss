@@ -1,0 +1,377 @@
+/*------------------------------------|
+|	Utilities                           |
+|------------------------------------*/
+
+/*---- Wrap section content. Adds screen-width formatting & Allows background colours to extend to screen edge ----*/
+.u-wrap {
+  position: relative;
+  max-width: $max_width;
+  margin: 0 auto;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  /*---- Media Query ----*/
+  @media screen and (min-width: $max_width) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.u-margin-auto {
+  margin: auto;
+}
+
+.u-relative {
+  position: relative;
+}
+.u-display-block {
+  display: block;
+}
+.u-inline-block {
+  display: inline-block;
+}
+.u-display-none {
+  display: none !important;
+}
+.u-width--33 {
+  width: 100%;
+  @media screen and (min-width: 850px) {
+    width: 33.33%;
+  }
+}
+.u-width--18 {
+  width: 100%;
+  //margin-right: 2%;
+  @media screen and (min-width: 850px) {
+    width: 18%;
+    margin-right: 2%;
+  }
+}
+.u-width--20 {
+  width: 20%;
+}
+.u-width--25 {
+  @media screen and (min-width: 600px) {
+    width: 48%;
+    margin-right: 1.6%;
+  }
+  @media screen and (min-width: 800px) {
+    width: 31%;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 23.4%;
+  }
+}
+.u-width--50--init {
+  width: 50%;
+}
+.u-width--50 {
+  width: 100%;
+  @media screen and (min-width: 850px) {
+    width: 50%;
+  }
+}
+.u-width--80 {
+  width: 100%;
+  @media screen and (min-width: 850px) {
+    width: 80%;
+  }
+  @media screen and (min-width: 1600px) {
+    width: 100%;
+  }
+}
+.u-max-width--600 {
+  max-width: 600px;
+}
+.u-max-width-600--850 {
+  max-width: 600px;
+  @media screen and (min-width: 850px) {
+    max-width: none;
+  }
+}
+
+.u-min-height-100 {
+  min-height: calc(100vh - 615px);
+}
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+.u-box-height-230 {
+  height: 230px;
+}
+
+// FLEX
+.u-flex--init {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.u-flex {
+  @media screen and (min-width: 850px) {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  }
+}
+
+.u-flex--600 {
+  @media screen and (min-width: 600px) {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  }
+}
+
+.u-flex-wrap {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.u-flex-space-between {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.u-order-3 {
+  order: 3;
+}
+
+.u-align-center {
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.u-flex-column {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+.u-flex-end {
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+
+.u-flex-center {
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+// FONT STYLES
+
+.u-text-white {
+  color: #fff;
+  h1, h2, p, a {
+    color: #fff;
+  }
+}
+
+.u-text-green {
+  color: #a5c715;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-uppercase {
+  text-transform: uppercase;
+}
+.u-italic {
+  font-style: italic;
+}
+.u-underline {
+  text-decoration: underline;
+}
+.u-bold {
+  font-weight: 400;
+}
+.u-lg-spacing {
+  letter-spacing: 1.5px;
+}
+.u-lg-line-height {
+  line-height: 30px;
+}
+
+.u-border-top {
+  border-top: 1px solid #cccbcb;
+}
+.u-border-right {
+  @media screen and (min-width: 850px) {
+    border-right: 1px solid #fff;
+  }
+}
+
+.u-font-size--12 {
+  font-size: 12px;
+}
+.u-font-size--26 {
+  font-size: 26px;
+}
+// COLORS
+
+.u-background--dark {
+  background-color: rgba(0,0,0, 0.8);
+}
+.u-background--dark--transparent {
+  background-color: rgba(0,0,0, 0);
+}
+
+.u-background--white {
+  @media screen and (min-width: 600px) {
+    background-color: #fff;
+  }
+}
+.u-background--grey {
+  background-color: #bcbcbb;
+}
+.u-background--light-grey {
+  background-color: #f3f3f3;
+}
+.u-background--dark-grey {
+  background-color: #424242;
+  color: #fff;
+}
+.u-background--slate {
+  background-color: #282828;
+}
+.u-background--green {
+  background-color: #a5c715;
+}
+.u-overlay--light {
+  background-color: rgba(9,15,18,0.12);
+}
+.u-overlay--dark {
+  background-color: rgba(0,0,0,0.45);
+}
+
+.u-overlay--extra-dark {
+  background-color: rgba(6,9,9,0.95);
+}
+
+// HOVER
+
+.o-content-block:hover .u-opacity-hover {
+  opacity: 1;
+}
+.o-content-block:hover .u-background--dark--transparent {
+  background-color: rgba(0,0,0, 0.8);
+}
+#box:hover .u-background--dark--transparent {
+  @media screen and (min-width: 1024px) {
+    background-color: rgba(0,0,0, 0.8);
+  }
+}
+
+// PADDING
+
+.u-padding--0 {
+  padding: 0;
+}
+
+.u-padding-sides--50 {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.u-padding-right--20 {
+  padding-right: 20px;
+}
+.u-padding-right--35 {
+  padding-right: 35px;
+}
+.u-padding-top--20 {
+  padding-top: 20px;
+}
+.u-padding-top--30 {
+  padding-top: 30px;
+}
+.u-padding-top--40 {
+  padding-top: 40px;
+}
+.u-padding-top--70 {
+  padding-top: 70px;
+}
+.u-padding-bottom--15 {
+  padding-bottom: 15px;
+}
+.u-padding-bottom--30 {
+  padding-bottom: 10px;
+  @media screen and (min-width: 850px) {
+    padding-bottom: 30px;
+  }
+}
+.u-padding-bottom--40 {
+  padding-bottom: 10px;
+  @media screen and (min-width: 1100px) {
+    padding-bottom: 20px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 40px;
+  }
+}
+.u-padding-bottom--50 {
+  padding-bottom: 20px;
+  @media screen and (min-width: 1024px) {
+    padding-bottom: 50px;
+  }
+}
+.u-padding-bottom--60 {
+  padding-bottom: 60px;
+}
+.u-margin--0 {
+  @media screen and (min-width: 850px) {
+    margin: 0 !important;
+  }
+}
+.u-margin-top--15 {
+  margin-top: 15px;
+}
+.u-margin-top--50 {
+  margin-top: 20px;
+  @media screen and (min-width: 1150px) {
+    margin-top: 50px;
+  }
+}
+.u-margin-bottom--15 {
+  margin-bottom: 15px;
+}
+.u-margin-bottom--20 {
+  margin-bottom: 20px;
+}
+.u-margin-bottom--30 {
+  margin-bottom: 30px;
+}
+.u-margin-top--40 {
+  margin-top: 40px;
+}
+.u-margin-right--5 {
+  margin-right: 5px;
+}
+.u-margin-right--10 {
+  margin-right: 10px;
+}
+.u-margin-right--15 {
+  margin-right: 15px;
+}
+.u-margin-right--30 {
+  margin-right: 30px;
+}
+.u-margin-right--60 {
+  margin-right: 0;
+  @media screen and (min-width: 800px) {
+    margin-right: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-right: 60px;
+  }
+}
+
+.u-border-bottom {
+  border-bottom: 1px solid #bcbcbb;
+}

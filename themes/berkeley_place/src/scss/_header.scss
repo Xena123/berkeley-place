@@ -1,0 +1,219 @@
+/*------------------------------------|
+|	Header                              |
+|------------------------------------*/
+
+/*---- Begin Header ----*/
+header {
+  //background-color: $colour-header;
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  p {
+    color: $colour-text-header;
+  }
+}
+/*---- End Header ----*/
+.c-header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  @media screen and (min-width: 600px){
+    padding: 30px;
+  }
+  @media screen and (min-width: 1000px){
+    padding: 50px 40px;
+  }
+  @media screen and (min-width: 1200px){
+    padding: 70px 140px;
+  }
+}
+
+.c-header--overlay {
+  background: transparent; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(rgba(0,0,0,0.32), transparent); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgba(0,0,0,0.32), transparent); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(rgba(0,0,0,0.32), transparent); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgba(0,0,0,0.32), transparent); /* Standard syntax */
+  box-shadow: inset 0px 0px 75px 0px rgba(4, 6, 5, 0.35);
+}
+
+.c-header-position {
+  width: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 75px;
+  @media screen and (min-width: 850px) {
+    top: 65px;
+  }
+  @media screen and (min-width: 1025px) {
+    top: 50%;
+  }
+}
+
+.c-header {
+  li {
+    padding-right: 15px;
+    @media screen and (min-width: 1000px){
+      padding-right: 30px;
+    }
+    a {
+      letter-spacing: 1.1px;
+    }
+  }
+}
+
+// header nav a {
+//   -webkit-transition: all 0.3s;
+//   -moz-transition: all 0.3s;
+//   -ms-transition: all 0.3s;
+//   -o-transition: all 0.3s;
+//   transition: all 0.3s;
+// }
+
+.c-header__title-img {
+  height: 40px;
+  width: 220px;
+}
+header {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header.smaller {
+  background-color: rgba(0,0,0,0.9);
+  @media screen and (min-width: 600px) {
+    height: 75px;
+    padding: 20px 40px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 20px 140px;
+  }
+}
+header.smaller .c-header__title {
+  @media screen and (min-width: 600px) {
+    //height: 50px;
+    //transform: scale(0.5, 0.5);
+  }
+}
+header.smaller .c-header__title-img {
+  @media screen and (min-width: 600px) {
+    background-image: url('../img/bp_logo_scrolled.png') !important;
+    //transform: scale(0.5, 0.5);
+  }
+}
+header.smaller nav a {
+  @media screen and (min-width: 600px) {
+    //line-height: 75px;
+  }
+}
+
+
+.c-header__nav {
+  display: none;
+  @media (min-width: 1000px) {
+    .u-offscreen-menu-display {
+      display: none;
+    }
+    .c-header__nav {
+      display: flex;
+    }
+  }
+}
+
+.c-social-link {
+  display: none;
+  @media (min-width: 600px) {
+    display: block;
+  }
+}
+
+.u-offscreen-menu-display {
+  display: block;
+}
+
+.c-header__nav {
+  display: none;
+}
+@media (min-width: 1000px) {
+  .u-offscreen-menu-display {
+      display: none;
+  }
+  .c-header__nav {
+    display: flex;
+  }
+}
+
+.is-menu-visible .c-mobile-nav-wrap {
+  right: 0;
+  -webkit-transform: translateX(0) translateZ(0);
+  transform: translateX(0) translateZ(0);
+}
+
+.c-mobile-nav-wrap {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 250px;
+  padding: 2.325em 1.25em;
+  overflow: auto;
+  background: #a5c715;
+  z-index: 1994;
+  -webkit-transform: translateX(250px) translateZ(0);
+  transform: translateX(250px) translateZ(0);
+  transition: -webkit-transform 0.3s cubic-bezier(0.14, 0.57, 0.43, 0.93);
+  transition: transform 0.3s cubic-bezier(0.14, 0.57, 0.43, 0.93);
+  .menu-item {
+    text-transform: uppercase;
+    padding: 0.9375em 0.625em;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    a {
+      color: #FFF;
+    }
+  }
+}
+
+.c-nav--mobile {
+  display: block;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.c-menu-trigger {
+  float: right;
+  margin-top: 0.3125em;
+  margin-left: 0.75em;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.u-show-menu {
+  right: 250px;
+}
+
+.u-move-button {
+  position: absolute;
+  right: 250px;
+}
+.u-move-button-insta {
+  position: absolute;
+  right: 287px;
+  bottom: 35px;
+}
+.u-move-button-houzz {
+  position: absolute;
+  right: 311px;
+  bottom: 33px;
+}

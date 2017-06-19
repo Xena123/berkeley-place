@@ -1,0 +1,157 @@
+/*------------------------------------|
+|	Components                          |
+|------------------------------------*/
+
+
+// BANNERS
+
+
+.c-bg-grid-img {
+  height: 390px;
+}
+
+// SIDEBAR NAVIGATION
+.c-sidebar-nav {
+  li {
+    padding: 30px 0;
+    border-bottom: 1px solid #fff;
+    margin: 0 15px;
+    @media screen and (min-width: 1000px) {
+      margin: 0 30px;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
+.c-dark-sidebar-nav {
+  li a {
+    color: #2d2d2d;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.c-top-black {
+  #menu-item-71,
+  #menu-item-70 {
+    text-transform: uppercase;
+    a {
+      color: #2d2d2d;
+      font-weight: 700;
+    }
+  }
+  #menu-item-70 a {
+    cursor: default;
+  }
+}
+
+// ARCHIVE
+.c-archive-icon {
+  height: 70px;
+  width: 140px;
+}
+
+.c-archive-work--img {
+  display: none;
+}
+
+// OUR WORK
+
+.c-our-work--img {
+  display: none;
+}
+
+.c-our-work--bg {
+  height: 230px;
+  max-width: 230px;
+  margin: auto;
+
+}
+
+.c-above-sidebar-widget {
+  height: 230px;
+  p {
+    color: #fff;
+    padding-bottom: 45px;
+    font-size: 17px;
+  }
+}
+.c-below-sidebar-widget {
+  .c-sidebar-img-wrap {
+    display: flex;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    padding-bottom: 30px;
+    a:first-of-type {
+      border-right: 1px solid #a5c715;
+      padding-right: 15px;
+    }
+  }
+  p,a {
+      color: #a5c715;
+  }
+  a {
+    font-weight: 400;
+  }
+}
+.c-below-sidebar-widget-2 {
+  p, a {
+    color: #fff;
+  }
+  a {
+    font-weight: 400;
+  }
+  .c-sidebar-block--green,
+  .c-sidebar-block--black {
+    padding: 25px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+  }
+  .c-sidebar-block--green {
+    background-color: #a5c715;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .c-sidebar-block--black {
+    background-color: #2d2d2d;
+    a {
+      text-transform: uppercase;
+      display: flex;
+      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      display: -webkit-flex;     /* NEW - Chrome */
+      align-items: center;
+      -webkit-align-items: center;
+    }
+    img {
+      padding-left: 10px;
+    }
+  }
+}
+
+// CONTACT US PAGE
+#map {
+  height: 265px;
+}
+
+#pagination {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#pagination a {
+  font-weight: 400;
+}

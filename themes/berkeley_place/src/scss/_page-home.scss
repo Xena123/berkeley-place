@@ -1,0 +1,190 @@
+/*------------------------------------|
+|	Page: Home                          |
+|------------------------------------*/
+
+/*---- Job Hunter Services ----*/
+
+
+// SLIDER
+.c-front-banner-bgd-img {
+  height: 400px;
+  position: relative;
+  @media screen and (min-width: 1000px) {
+    height: 600px;
+  }
+}
+
+.c-banner-overlay {
+  position: absolute;
+  bottom: 0;
+  //width: 28%;
+  right: 0;
+  min-width: 320px;
+  @media screen and (min-width: 450px) {
+    width: 85%;
+    right: 0;
+  }
+  @media screen and (min-width: 550px) {
+    width: 75%;
+    right: 0;
+  }
+  @media screen and (min-width: 600px) {
+    min-width: 375px;
+    right: 10px;
+    width: 28%;
+  }
+  @media screen and (min-width: 600px) {
+    right: 50px;
+  }
+  @media screen and (min-width: 1000px) {
+    right: 200px;
+    min-width: 400px;
+  }
+}
+
+.c-banner-cta {
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+
+
+.c-front-intro {
+  p {
+    font-size: 20px;
+    line-height: 28px;
+    @media screen and (min-width: 600px) {
+      font-size: 26px;
+    }
+  }
+}
+
+// INSTAFEED
+
+#instafeed {
+  position: relative;
+  a:last-of-type {
+    @media screen and (min-width: 1200px) {
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: 850px) {
+    //height:200px;
+    flex-wrap: nowrap;
+  }
+}
+.c-bg-insta {
+  display:block;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-size:cover;
+  width: 230px;
+  height: 230px;
+}
+
+.c-sgl-feed {
+  width: 230px;
+  height: 230px;
+  padding: 0;
+  margin: auto;
+  @media screen and (min-width: 600px) {
+    width: 47%;
+    height: 230px;
+  }
+  @media screen and (min-width: 850px) {
+    width: 230px;
+    margin-right: 10px;
+  }
+}
+
+.c-insta-cta {
+  max-width: 230px;
+  height: 230px;
+  margin: auto;
+  @media screen and (min-width: 600px) {
+    width: 43%;
+    margin: 0 10px 0 0;
+  }
+  a {
+    font-weight: 400;
+  }
+  p, a {
+    font-size: 17px;
+  }
+}
+
+// FRONT GRID
+
+
+
+#overlay {
+  text-align: center;
+  //padding: 45px 0 66px 0;
+  opacity: 1;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  @media screen and (min-width: 1025px) {
+    opacity: 0;
+  }
+}
+
+#box {
+  max-width: 500px;
+  margin: auto;
+  @media screen and (min-width: 850px) {
+    margin: 0 15px 0 0;
+  }
+}
+
+#box:hover #overlay {
+  opacity:1;
+}
+
+#box:hover .c-grid-title {
+  @media screen and (min-width: 1025px) {
+    top: 20%;
+    text-decoration: underline;
+  }
+}
+
+.c-front-hover-position {
+  transition: .5s ease;
+  position: absolute;
+  top: 32%;
+  padding: 0 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%;
+  @media screen and (min-width: 850px) {
+    padding: 0 15px;
+    height: 66%;
+    top: 25%;
+  }
+  @media screen and (min-width: 920px) {
+    top: 32%;
+    padding: 0 30px;
+  }
+  @media screen and (min-width: 1025px) {
+    height: 60%;
+  }
+  @media screen and (min-width: 1500px) {
+    height: 50%;
+  }
+}
+
+// NEWS BLOCK
+
+.c-front_news-img {
+  height: 250px;
+  width: 100%;
+  @media screen and (min-width: 850px) {
+    width: 50%;
+    height: 480px;
+  }
+}

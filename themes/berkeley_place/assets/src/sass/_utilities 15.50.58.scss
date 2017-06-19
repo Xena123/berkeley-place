@@ -1,0 +1,17 @@
+/*------------------------------------|
+|	Utilities                           |
+|------------------------------------*/
+
+/*---- Wrap section content. Adds screen-width formatting & Allows background colours to extend to screen edge ----*/
+.u-wrap {
+  position: relative;
+  max-width: $max_width;
+  margin: 0 auto;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  /*---- Media Query ----*/
+  @media screen and (min-width: $max_width) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

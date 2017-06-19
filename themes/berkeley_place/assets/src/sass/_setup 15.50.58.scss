@@ -1,0 +1,88 @@
+/*------------------------------------|
+|	Setup                               |
+|------------------------------------*/
+
+@import "_reset.scss";
+@import "_mixins.scss";
+@import "_media-queries.scss";
+
+/*---- Font Sizes ----*/
+$base-font-size: 16 !default;
+
+/*---- Font Weights: Adjust to actual font sizes being used. 0 = Normal text, + = steps heavier, - = steps lighter ----*/
+$fw_p5: 700;
+$fw_p4: 700;
+$fw_p3: 700;
+$fw_p2: 600;
+$fw_p1: 500;
+$fw: 400;
+$fw_m1: 300;
+$fw_m2: 200;
+$fw_m3: 100;
+
+/*---- Font Faces ----*/
+$body_font = sans-serif;
+
+/*---- Max Screen Width ----*/
+$max_width = rem(1600);
+
+/*---- Box Model ----*/
+$box-model: border-box;
+
+/*---- Colours ----*/
+$colour-body: #fff;
+$colour-header: #fff;
+$colour-footer: #fff;
+$colour-text-body: #000;
+$colour-text-header: #000;
+$colour-text-footer: #000;
+
+/* Breakpoints */
+$bp-nav: rem(960);
+$bp-max: $max_width;
+
+$bp-phone: rem(500);
+$bp-phone-l: rem(600);
+$bp-tablet: rem(768);
+$bp-tablet-l: rem(1024);
+$bp-laptop-s: rem(1280);
+$bp-laptop: rem(1380);
+$bp-laptop-l: rem(1680);
+$bp-desktop: rem(2000);
+
+/* Base Styles */
+body {
+	overflow-x: hidden;
+  background-color: $colour-body;
+	@include mediaMax($breakpoint-nav) {
+		&.c-nav--open {
+      overflow: hidden;
+    }
+	}
+}
+
+img,
+iframe,
+video,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+input, button {
+  @include input-reset;
+  padding: em(5);
+}
+
+* {
+  @include box-sizing($box-model);
+}
+
+/*---- Clearfix ----*/
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
